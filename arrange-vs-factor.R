@@ -15,7 +15,6 @@ penguins %>%
   ungroup() %>% 
   gt()
 
-
 # If we want to reorder rows in a table, we use the arrange() function.
 
 penguins %>% 
@@ -49,7 +48,7 @@ penguins %>%
 
 # It doesn't! 
 # Instead, we need to use factors.
-# I'm using fct_reorder() from the purrr package. 
+# I'm using fct_reorder() from the forcats package. 
 # This function reorders one variable by the value of another variable.
 
 penguins %>% 
