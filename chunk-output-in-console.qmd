@@ -1,0 +1,29 @@
+---
+title: "Chunk Output in Console"
+format: html
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+library(tidyverse)
+library(palmerpenguins)
+```
+
+```{r}
+penguins |> 
+  count(island)
+```
+
+```{r}
+penguins |> 
+  count(island) |> 
+  ggplot(
+    aes(
+      x = island,
+      y = n
+    )
+  ) +
+  geom_col()
+```
+
