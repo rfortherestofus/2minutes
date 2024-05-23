@@ -15,6 +15,14 @@ penguins |>
     subtitle = "But the other islands are still great. There are penguins living there. So hey, don't ignore those two islands, ok?"
   )
 
+
+
+
+
+
+
+
+
 penguins |>
   count(island) |>
   ggplot(
@@ -26,8 +34,14 @@ penguins |>
   geom_col() +
   labs(
     title = "Biscoe island has the most penguins",
-    subtitle = str_wrap("But the other islands are still great. There are penguins living there. So hey, don't ignore those two islands, ok?", 10)
+    subtitle = str_wrap("But the other islands are still great. There are penguins living there. So hey, don't ignore those two islands, ok?", width = 10)
   )
+
+
+
+
+
+
 
 
 
