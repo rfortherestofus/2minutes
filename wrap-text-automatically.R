@@ -2,7 +2,7 @@ library(tidyverse)
 library(palmerpenguins)
 
 penguins |>
-  count(island) |> 
+  count(island) |>
   ggplot(
     aes(
       x = island,
@@ -10,7 +10,25 @@ penguins |>
     )
   ) +
   geom_col() +
-  labs(title = "Ullamco sit Lorem culpa reprehenderit tempor tempor fugiat ut adipisicing fugiat officia nisi. Aliqua dolore duis laboris commodo quis magna dolore anim nostrud deserunt in eu sint. Reprehenderit excepteur adipisicing laboris sint exercitation esse nulla proident est dolore sunt. Non amet eiusmod laborum minim quis cupidatat elit proident ad fugiat.")
+  labs(
+    title = "Biscoe island has the most penguins",
+    subtitle = "But the other islands are still great. There are penguins living there. So hey, don't ignore those two islands, ok?"
+  )
+
+penguins |>
+  count(island) |>
+  ggplot(
+    aes(
+      x = island,
+      y = n
+    )
+  ) +
+  geom_col() +
+  labs(
+    title = "Biscoe island has the most penguins",
+    subtitle = str_wrap("But the other islands are still great. There are penguins living there. So hey, don't ignore those two islands, ok?", 10)
+  )
+
 
 
 library(tidyverse)
@@ -18,7 +36,7 @@ library(palmerpenguins)
 library(ggtext)
 
 penguins |>
-  count(island) |> 
+  count(island) |>
   ggplot(
     aes(
       x = island,
@@ -26,7 +44,10 @@ penguins |>
     )
   ) +
   geom_col() +
-  labs(title = "Ullamco sit Lorem culpa reprehenderit tempor tempor fugiat ut adipisicing fugiat officia nisi. Aliqua dolore duis laboris commodo quis magna dolore anim nostrud deserunt in eu sint. Reprehenderit excepteur adipisicing laboris sint exercitation esse nulla proident est dolore sunt. Non amet eiusmod laborum minim quis cupidatat elit proident ad fugiat.") +
+  labs(
+    title = "Biscoe island has the most penguins",
+    subtitle = "But the other islands are still great. There are penguins living there. So hey, don't ignore those two islands, ok?"
+  ) +
   theme(
-    plot.title = element_textbox_simple()
+    plot.subtitle = element_textbox_simple()
   )
