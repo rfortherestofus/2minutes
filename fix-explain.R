@@ -9,4 +9,4 @@ penguins |>
       y = n,
     )
   ) +
-  geom_bar()
+  geom_col()
