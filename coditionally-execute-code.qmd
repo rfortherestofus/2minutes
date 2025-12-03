@@ -1,0 +1,46 @@
+---
+title: "Conditionally Execute Code Chunk"
+format: docx
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+```{r}
+library(tidyverse)
+library(palmerpenguins)
+```
+
+
+::: {.content-hidden when-format="docx"}
+```{r}
+library(gt)
+library(gtExtras)
+
+penguins |> 
+  group_by(species) |> 
+  summarize(avg_bill_length = mean(bill_length_mm, na.rm = TRUE)) |> 
+  ungroup() |> 
+  gt() |> 
+  gt_theme_538()
+```
+:::
+
+
+::: {.content-hidden when-format="html"}
+```{r}
+library(flextable)
+
+penguins |> 
+  group_by(species) |> 
+  summarize(avg_bill_length = mean(bill_length_mm, na.rm = TRUE)) |> 
+  ungroup() |> 
+  flextable() |> 
+  theme_zebra() |> 
+  autofit()
+```
+:::
+
+
+
